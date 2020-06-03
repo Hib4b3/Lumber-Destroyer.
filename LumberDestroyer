@@ -1,0 +1,2149 @@
+-- Gui to Lua
+-- Version: 3.2
+-- Automatically Add players to Blacklist --
+ 
+Mouse = game.Players.LocalPlayer:GetMouse()
+ 
+ 
+Instance.new('RemoteEvent', game:service'ReplicatedStorage'.Interaction).Name = "Ban"
+ 
+Client = game.ReplicatedStorage.Interaction.ClientSetListPlayer
+players = game.Players
+for i, v in pairs(players:GetPlayers()) do
+    if v.Name ~= players.LocalPlayer.Name then
+        Client:InvokeServer(players.LocalPlayer.BlacklistFolder, v, true)
+    end
+end
+players.PlayerAdded:connect(function(plr)
+    Client:InvokeServer(players.LocalPlayer.BlacklistFolder, plr, true)
+end)
+ 
+game:GetService("StarterGui"):SetCore("SendNotification", {
+  Title = "Lumber Destroyer",
+  Text = "Loaded Successful."
+})
+ 
+local players = game:GetService('Players')
+if game.Players.LocalPlayer then
+game.StarterGui:SetCore('SendNotification', {
+    Title = ' '.. players.LocalPlayer.Name..'!',
+    Text = 'Welcome to Lumber Destroyer!',
+    Icon = [[http://www.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&userName=]]..players.LocalPlayer.Name..[[&RAND]] .. math.random(1,10000000),
+    Duration = 5,
+   })
+  end
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local PlayerFrame = Instance.new("Frame")
+local Playertitle = Instance.new("TextLabel")
+local closeP = Instance.new("TextButton")
+local openP = Instance.new("TextButton")
+local playerbframe = Instance.new("Frame")
+local speed = Instance.new("TextButton")
+local noclip = Instance.new("TextButton")
+local fly = Instance.new("TextButton")
+local infinitejump = Instance.new("TextButton")
+local reset = Instance.new("TextButton")
+local btools = Instance.new("TextButton")
+local clicktp = Instance.new("TextButton")
+local Esp = Instance.new("TextButton")
+local jump = Instance.new("TextButton")
+local Rejoinserver = Instance.new("TextButton")
+local WaterWalk = Instance.new("TextButton")
+local platform = Instance.new("TextButton")
+local PlotFrame = Instance.new("Frame")
+local plottitle = Instance.new("TextLabel")
+local openPt = Instance.new("TextButton")
+local closePt = Instance.new("TextButton")
+local plotbframe = Instance.new("Frame")
+local maxland = Instance.new("TextButton")
+local freeland = Instance.new("TextButton")
+local allbps = Instance.new("TextButton")
+local wipebase = Instance.new("TextButton")
+local antibl = Instance.new("TextButton")
+local autobl = Instance.new("TextButton")
+local clearbps = Instance.new("TextButton")
+local clearstructures = Instance.new("TextButton")
+local TextButton = Instance.new("TextButton")
+local trollingFrame = Instance.new("Frame")
+local trollingtitle = Instance.new("TextLabel")
+local opent = Instance.new("TextButton")
+local closet = Instance.new("TextButton")
+local trollingbframe = Instance.new("Frame")
+local spin = Instance.new("TextButton")
+local nolinbs = Instance.new("TextButton")
+local brickhead = Instance.new("TextButton")
+local thomas = Instance.new("TextButton")
+local dupeframe = Instance.new("Frame")
+local dupetitle = Instance.new("TextLabel")
+local opend = Instance.new("TextButton")
+local closed = Instance.new("TextButton")
+local dupebframe = Instance.new("Frame")
+local TextButton_2 = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local TextLabel_4 = Instance.new("TextLabel")
+local TextLabel_5 = Instance.new("TextLabel")
+local TextLabel_6 = Instance.new("TextLabel")
+local TextLabel_7 = Instance.new("TextLabel")
+local TextLabel_8 = Instance.new("TextLabel")
+local TextLabel_9 = Instance.new("TextLabel")
+local TextLabel_10 = Instance.new("TextLabel")
+local TextLabel_11 = Instance.new("TextLabel")
+local miscframe = Instance.new("Frame")
+local misctitle = Instance.new("TextLabel")
+local openm = Instance.new("TextButton")
+local closem = Instance.new("TextButton")
+local miscbframe = Instance.new("Frame")
+local nofog = Instance.new("TextButton")
+local alwaysday = Instance.new("TextButton")
+local leakeditems = Instance.new("TextButton")
+local fatsbps = Instance.new("TextButton")
+local hardd = Instance.new("TextButton")
+local carfly = Instance.new("TextButton")
+local chatspy = Instance.new("TextButton")
+local palmbridge = Instance.new("TextButton")
+local safaribridge = Instance.new("TextButton")
+local goldbridge = Instance.new("TextButton")
+local yellobridge = Instance.new("TextButton")
+local infinitewire = Instance.new("TextButton")
+local antiafk = Instance.new("TextButton")
+local woodFrame = Instance.new("Frame")
+local woodtitle = Instance.new("TextLabel")
+local openW = Instance.new("TextButton")
+local closew = Instance.new("TextButton")
+local woodbframe = Instance.new("Frame")
+local sellwood = Instance.new("TextButton")
+local sellinglogs = Instance.new("TextButton")
+local tpwood = Instance.new("TextButton")
+local snowglow = Instance.new("TextButton")
+local notrees = Instance.new("TextButton")
+local palm = Instance.new("TextButton")
+local goldswampy = Instance.new("TextButton")
+local greenswampy = Instance.new("TextButton")
+local cavecrawler = Instance.new("TextButton")
+local frost = Instance.new("TextButton")
+local koa = Instance.new("TextButton")
+local oak = Instance.new("TextButton")
+local vol = Instance.new("TextButton")
+local Generic = Instance.new("TextButton")
+local birch = Instance.new("TextButton")
+local walnut = Instance.new("TextButton")
+local sinister = Instance.new("TextButton")
+local pine = Instance.new("TextButton")
+local spooky = Instance.new("TextButton")
+local fir = Instance.new("TextButton")
+local cherry = Instance.new("TextButton")
+local tpwood_2 = Instance.new("TextLabel")
+local tplogs = Instance.new("TextButton")
+local tpframe = Instance.new("Frame")
+local tptitle = Instance.new("TextLabel")
+local opentp = Instance.new("TextButton")
+local closetp = Instance.new("TextButton")
+local Tpbframe = Instance.new("Frame")
+local fancyfur = Instance.new("TextButton")
+local fineArt = Instance.new("TextButton")
+local Shrine = Instance.new("TextButton")
+local bob = Instance.new("TextButton")
+local landstore = Instance.new("TextButton")
+local link = Instance.new("TextButton")
+local starttpt = Instance.new("TextButton")
+local dock = Instance.new("TextButton")
+local ski = Instance.new("TextButton")
+local car = Instance.new("TextButton")
+local wood = Instance.new("TextButton")
+local bridge = Instance.new("TextButton")
+local strangeman = Instance.new("TextButton")
+local creditsframe = Instance.new("Frame")
+local creditstitle = Instance.new("TextLabel")
+local openc = Instance.new("TextButton")
+local closec = Instance.new("TextButton")
+local Creditsbframe = Instance.new("Frame")
+local thanks = Instance.new("TextButton")
+local to = Instance.new("TextButton")
+local hib = Instance.new("TextButton")
+local andd = Instance.new("TextButton")
+local unknown = Instance.new("TextButton")
+local lumberdestroyer = Instance.new("TextButton")
+local andd_2 = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+PlayerFrame.Name = "PlayerFrame"
+PlayerFrame.Parent = ScreenGui
+PlayerFrame.BackgroundColor3 = Color3.fromRGB(70, 82, 255)
+PlayerFrame.Position = UDim2.new(0.0119840261, 0, 0, 0)
+PlayerFrame.Size = UDim2.new(0, 163, 0, 39)
+
+Playertitle.Name = "Playertitle"
+Playertitle.Parent = PlayerFrame
+Playertitle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Playertitle.Size = UDim2.new(0, 163, 0, 31)
+Playertitle.Font = Enum.Font.GothamBold
+Playertitle.Text = "Player"
+Playertitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+Playertitle.TextSize = 20.000
+
+closeP.Name = "closeP"
+closeP.Parent = PlayerFrame
+closeP.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+closeP.BorderSizePixel = 0
+closeP.Position = UDim2.new(0.0736198574, 0, 0.153846025, 0)
+closeP.Size = UDim2.new(0, 34, 0, 26)
+closeP.Font = Enum.Font.GothamBold
+closeP.Text = "-"
+closeP.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeP.TextSize = 20.000
+closeP.MouseButton1Down:connect(function()
+      playerbframe.Visible = false
+      openP.Visible = true
+end)
+
+openP.Name = "openP"
+openP.Parent = PlayerFrame
+openP.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+openP.BorderSizePixel = 0
+openP.Position = UDim2.new(0.791411161, 0, 0.128205299, 0)
+openP.Size = UDim2.new(0, 34, 0, 26)
+openP.Font = Enum.Font.GothamBold
+openP.Text = "+"
+openP.TextColor3 = Color3.fromRGB(255, 255, 255)
+openP.TextSize = 20.000
+openP.MouseButton1Down:connect(function()
+      playerbframe.Visible = true
+      openP.Visible = true
+end)
+
+playerbframe.Name = "playerbframe"
+playerbframe.Parent = PlayerFrame
+playerbframe.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+playerbframe.Position = UDim2.new(0, 0, 1, 0)
+playerbframe.Size = UDim2.new(0, 163, 0, 323)
+
+speed.Name = "speed"
+speed.Parent = playerbframe
+speed.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+speed.BorderSizePixel = 0
+speed.Size = UDim2.new(0, 163, 0, 25)
+speed.Font = Enum.Font.GothamBold
+speed.Text = "Speed (v)"
+speed.TextColor3 = Color3.fromRGB(255, 255, 255)
+speed.TextSize = 20.000
+speed.TextWrapped = true
+speed.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/bzgr8myP"))()
+end)
+
+noclip.Name = "noclip"
+noclip.Parent = playerbframe
+noclip.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+noclip.BorderSizePixel = 0
+noclip.Position = UDim2.new(0, 0, 0.323073119, 0)
+noclip.Size = UDim2.new(0, 163, 0, 25)
+noclip.Font = Enum.Font.GothamBold
+noclip.Text = "Noclip (e)"
+noclip.TextColor3 = Color3.fromRGB(255, 255, 255)
+noclip.TextSize = 20.000
+noclip.TextWrapped = true
+noclip.MouseButton1Down:connect(function()
+      noclip = false
+game:GetService('RunService').Stepped:connect(function()
+if noclip then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == "e" then
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+print('Loaded')
+print('Press "E" to noclip')
+end)
+
+fly.Name = "fly"
+fly.Parent = playerbframe
+fly.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+fly.BorderSizePixel = 0
+fly.Position = UDim2.new(0, 0, 0.398423374, 0)
+fly.Size = UDim2.new(0, 163, 0, 25)
+fly.Font = Enum.Font.GothamBold
+fly.Text = "Fly (e)"
+fly.TextColor3 = Color3.fromRGB(255, 255, 255)
+fly.TextSize = 20.000
+fly.TextWrapped = true
+fly.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/tc77gPAL"))()
+end)
+
+infinitejump.Name = "infinitejump"
+infinitejump.Parent = playerbframe
+infinitejump.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+infinitejump.BorderSizePixel = 0
+infinitejump.Position = UDim2.new(0, 0, 0.153796643, 0)
+infinitejump.Size = UDim2.new(0, 163, 0, 25)
+infinitejump.Font = Enum.Font.GothamBold
+infinitejump.Text = "Infinite Jump"
+infinitejump.TextColor3 = Color3.fromRGB(255, 255, 255)
+infinitejump.TextSize = 20.000
+infinitejump.TextWrapped = true
+infinitejump.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/V3DKCQTT"))()
+end)
+
+reset.Name = "reset"
+reset.Parent = playerbframe
+reset.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+reset.BorderSizePixel = 0
+reset.Position = UDim2.new(0, 0, 0.733880401, 0)
+reset.Size = UDim2.new(0, 163, 0, 25)
+reset.Font = Enum.Font.GothamBold
+reset.Text = "Reset"
+reset.TextColor3 = Color3.fromRGB(255, 255, 255)
+reset.TextSize = 20.000
+reset.TextWrapped = true
+reset.MouseButton1Down:connect(function()
+      game.Players.LocalPlayer.Character.Head:Destroy()
+end)
+
+btools.Name = "btools"
+btools.Parent = playerbframe
+btools.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+btools.BorderSizePixel = 0
+btools.Position = UDim2.new(-0.00613496918, 0, 0.57184273, 0)
+btools.Size = UDim2.new(0, 163, 0, 25)
+btools.Font = Enum.Font.GothamBold
+btools.Text = "Btools"
+btools.TextColor3 = Color3.fromRGB(255, 255, 255)
+btools.TextSize = 20.000
+btools.TextWrapped = true
+btools.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet(('https://pastebin.com/raw/a2nVDRVZ'),true))()
+end)
+
+clicktp.Name = "clicktp"
+clicktp.Parent = playerbframe
+clicktp.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+clicktp.BorderSizePixel = 0
+clicktp.Position = UDim2.new(0, 0, 0.654387116, 0)
+clicktp.Size = UDim2.new(0, 163, 0, 25)
+clicktp.Font = Enum.Font.GothamBold
+clicktp.Text = " ctrl + click tp"
+clicktp.TextColor3 = Color3.fromRGB(255, 255, 255)
+clicktp.TextSize = 20.000
+clicktp.TextWrapped = true
+clicktp.MouseButton1Down:connect(function()
+      mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Click Teleport"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+Esp.Name = "Esp"
+Esp.Parent = playerbframe
+Esp.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Esp.BorderSizePixel = 0
+Esp.Position = UDim2.new(-5.96046448e-08, 0, 0.809230685, 0)
+Esp.Size = UDim2.new(0, 163, 0, 25)
+Esp.Font = Enum.Font.GothamBold
+Esp.Text = "Esp"
+Esp.TextColor3 = Color3.fromRGB(255, 255, 255)
+Esp.TextSize = 20.000
+Esp.TextWrapped = true
+Esp.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/NC2Y0kKd"))()
+end)
+
+jump.Name = "jump"
+jump.Parent = playerbframe
+jump.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+jump.BorderSizePixel = 0
+jump.Position = UDim2.new(0, 0, 0.0784463063, 0)
+jump.Size = UDim2.new(0, 163, 0, 25)
+jump.Font = Enum.Font.GothamBold
+jump.Text = "Jump"
+jump.TextColor3 = Color3.fromRGB(255, 255, 255)
+jump.TextSize = 20.000
+jump.TextWrapped = true
+jump.MouseButton1Down:connect(function()
+      game.Players.LocalPlayer.Character.Humanoid.JumpPower = 200
+end)
+
+Rejoinserver.Name = "Rejoinserver"
+Rejoinserver.Parent = playerbframe
+Rejoinserver.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Rejoinserver.BorderSizePixel = 0
+Rejoinserver.Position = UDim2.new(0, 0, 0.238434851, 0)
+Rejoinserver.Size = UDim2.new(0, 163, 0, 25)
+Rejoinserver.Font = Enum.Font.GothamBold
+Rejoinserver.Text = "Rejoin server"
+Rejoinserver.TextColor3 = Color3.fromRGB(255, 255, 255)
+Rejoinserver.TextSize = 20.000
+Rejoinserver.TextWrapped = true
+Rejoinserver.MouseButton1Down:connect(function()
+      local placeId = "13822889"
+    game:GetService("TeleportService"):Teleport(placeId)
+end)
+
+WaterWalk.Name = "WaterWalk"
+WaterWalk.Parent = playerbframe
+WaterWalk.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+WaterWalk.BorderSizePixel = 0
+WaterWalk.Position = UDim2.new(-7.4505806e-09, 0, 0.49544546, 0)
+WaterWalk.Size = UDim2.new(0, 163, 0, 25)
+WaterWalk.Font = Enum.Font.GothamBold
+WaterWalk.Text = "Tp To Plot"
+WaterWalk.TextColor3 = Color3.fromRGB(255, 255, 255)
+WaterWalk.TextSize = 20.000
+WaterWalk.TextWrapped = true
+WaterWalk.MouseButton1Down:connect(function()
+        for i,v in pairs(game.Workspace.Properties:GetChildren()) do
+        if v.Owner.Value == game.Players.LocalPlayer then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.OriginSquare.CFrame + Vector3.new(0,10,0)
+        end
+    end
+end)
+
+platform.Name = "platform"
+platform.Parent = playerbframe
+platform.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+platform.BorderSizePixel = 0
+platform.Position = UDim2.new(0, 0, 0.884375155, 0)
+platform.Size = UDim2.new(0, 163, 0, 25)
+platform.Font = Enum.Font.GothamBold
+platform.Text = "Drivable Water"
+platform.TextColor3 = Color3.fromRGB(255, 255, 255)
+platform.TextSize = 20.000
+platform.TextWrapped = true
+platform.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/tASirLbL"))()
+end)
+
+PlotFrame.Name = "PlotFrame"
+PlotFrame.Parent = ScreenGui
+PlotFrame.BackgroundColor3 = Color3.fromRGB(70, 82, 255)
+PlotFrame.Position = UDim2.new(0.138225168, 0, 0, 0)
+PlotFrame.Size = UDim2.new(0, 163, 0, 39)
+
+plottitle.Name = "plottitle"
+plottitle.Parent = PlotFrame
+plottitle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+plottitle.Size = UDim2.new(0, 163, 0, 31)
+plottitle.Font = Enum.Font.GothamBold
+plottitle.Text = "Plot"
+plottitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+plottitle.TextSize = 20.000
+
+openPt.Name = "openPt"
+openPt.Parent = PlotFrame
+openPt.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+openPt.BorderSizePixel = 0
+openPt.Position = UDim2.new(0.791411161, 0, 0.128205299, 0)
+openPt.Size = UDim2.new(0, 34, 0, 26)
+openPt.Font = Enum.Font.GothamBold
+openPt.Text = "+"
+openPt.TextColor3 = Color3.fromRGB(255, 255, 255)
+openPt.TextSize = 20.000
+openPt.MouseButton1Down:connect(function()
+      plotbframe.Visible = true
+      openPt.Visible = true
+end)
+
+closePt.Name = "closePt"
+closePt.Parent = PlotFrame
+closePt.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+closePt.BorderSizePixel = 0
+closePt.Position = UDim2.new(0.0736198574, 0, 0.153846025, 0)
+closePt.Size = UDim2.new(0, 34, 0, 26)
+closePt.Font = Enum.Font.GothamBold
+closePt.Text = "-"
+closePt.TextColor3 = Color3.fromRGB(255, 255, 255)
+closePt.TextSize = 20.000
+closePt.MouseButton1Down:connect(function()
+      plotbframe.Visible = false
+      openPt.Visible = true
+end)
+
+plotbframe.Name = "plotbframe"
+plotbframe.Parent = PlotFrame
+plotbframe.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+plotbframe.Position = UDim2.new(0, 0, 1, 0)
+plotbframe.Size = UDim2.new(0, 163, 0, 240)
+
+maxland.Name = "maxland"
+maxland.Parent = plotbframe
+maxland.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+maxland.BorderSizePixel = 0
+maxland.Position = UDim2.new(0, 0, 0.00416667433, 0)
+maxland.Size = UDim2.new(0, 163, 0, 25)
+maxland.Font = Enum.Font.GothamBold
+maxland.Text = "Max land"
+maxland.TextColor3 = Color3.fromRGB(255, 255, 255)
+maxland.TextSize = 20.000
+maxland.TextWrapped = true
+maxland.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/gRa6JkJb"))()
+end)
+
+freeland.Name = "free land"
+freeland.Parent = plotbframe
+freeland.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+freeland.BorderSizePixel = 0
+freeland.Position = UDim2.new(0, 0, 0.0997792855, 0)
+freeland.Size = UDim2.new(0, 163, 0, 25)
+freeland.Font = Enum.Font.GothamBold
+freeland.Text = "Free land"
+freeland.TextColor3 = Color3.fromRGB(255, 255, 255)
+freeland.TextSize = 20.000
+freeland.TextWrapped = true
+freeland.MouseButton1Down:connect(function()
+        for a,b in pairs(workspace.Properties:GetChildren()) do 
+    if b:FindFirstChild("Owner") and b:FindFirstChild("OriginSquare") and b.Owner.Value == nil then 
+        game.ReplicatedStorage.PropertyPurchasing.ClientPurchasedProperty:FireServer(b, b.OriginSquare.OriginCFrame.Value.p + Vector3.new(0,3,0))
+ wait(0.5)
+        Instance.new('RemoteEvent', game:service'ReplicatedStorage'.Interaction).Name = "Ban"
+	for i,v in pairs(game.Workspace.Properties:GetChildren()) do
+		if v.Owner.Value == game.Players.LocalPlayer then
+    game.Players.LocalPlayer.Character.Humanoid.Jump = true
+    wait(0.1)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.OriginSquare.CFrame + Vector3.new(0,10,0)
+    game.Players.LocalPlayer.Character.Humanoid.Jump = true
+    wait(0.1)
+		end
+	end
+
+  --     game.Players.LocalPlayer.Character:MoveTo(b.OriginSquare.Position)
+        break
+    end
+end
+end)
+
+allbps.Name = "allbps"
+allbps.Parent = plotbframe
+allbps.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+allbps.BorderSizePixel = 0
+allbps.Position = UDim2.new(0, 0, 0.195391893, 0)
+allbps.Size = UDim2.new(0, 163, 0, 25)
+allbps.Font = Enum.Font.GothamBold
+allbps.Text = "All Bps"
+allbps.TextColor3 = Color3.fromRGB(255, 255, 255)
+allbps.TextSize = 20.000
+allbps.TextWrapped = true
+allbps.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/Zz5TeQXY"))()
+end)
+
+wipebase.Name = "wipebase"
+wipebase.Parent = plotbframe
+wipebase.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+wipebase.BorderSizePixel = 0
+wipebase.Position = UDim2.new(0, 0, 0.299337804, 0)
+wipebase.Size = UDim2.new(0, 163, 0, 25)
+wipebase.Font = Enum.Font.GothamBold
+wipebase.Text = "Wipe my base"
+wipebase.TextColor3 = Color3.fromRGB(255, 255, 255)
+wipebase.TextSize = 20.000
+wipebase.TextWrapped = true
+wipebase.MouseButton1Down:connect(function()
+      for i,v in pairs(game.Workspace.PlayerModels:GetChildren()) do
+if v:FindFirstChild("Owner") and v:FindFirstChild("Type") and v.Owner.Value == game.Players.LocalPlayer then
+local A_1 = v
+local Event = game:GetService("ReplicatedStorage").Interaction.DestroyStructure
+Event:FireServer(A_1)
+end
+end
+end)
+
+antibl.Name = "antibl"
+antibl.Parent = plotbframe
+antibl.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+antibl.BorderSizePixel = 0
+antibl.Position = UDim2.new(0, 0, 0.41161713, 0)
+antibl.Size = UDim2.new(0, 163, 0, 25)
+antibl.Font = Enum.Font.GothamBold
+antibl.Text = "Blacklist all"
+antibl.TextColor3 = Color3.fromRGB(255, 255, 255)
+antibl.TextSize = 20.000
+antibl.TextWrapped = true
+antibl.MouseButton1Down:connect(function()
+      Client = game.ReplicatedStorage.Interaction.ClientSetListPlayer
+players = game.Players
+for i, v in pairs(players:GetPlayers()) do
+    if v.Name ~= players.LocalPlayer.Name then
+        Client:InvokeServer(players.LocalPlayer.BlacklistFolder, v, true)
+    end
+end
+players.PlayerAdded:connect(function(plr)
+    Client:InvokeServer(players.LocalPlayer.BlacklistFolder, plr, true)
+end)
+ 
+end)
+
+autobl.Name = "autobl"
+autobl.Parent = plotbframe
+autobl.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+autobl.BorderSizePixel = 0
+autobl.Position = UDim2.new(0, 0, 0.518908858, 0)
+autobl.Size = UDim2.new(0, 163, 0, 25)
+autobl.Font = Enum.Font.GothamBold
+autobl.Text = "Whitelist all"
+autobl.TextColor3 = Color3.fromRGB(255, 255, 255)
+autobl.TextSize = 20.000
+autobl.TextWrapped = true
+autobl.MouseButton1Down:connect(function()
+      Client = game.ReplicatedStorage.Interaction.ClientSetListPlayer
+players = game.Players
+for i, v in pairs(players:GetPlayers()) do
+    if v.Name ~= players.LocalPlayer.Name then
+        Client:InvokeServer(players.LocalPlayer.WhitelistFolder, v, true)
+    end
+end
+players.PlayerAdded:connect(function(plr)
+    Client:InvokeServer(players.LocalPlayer.WhitelistFolder, plr, true)
+end)
+end)
+
+clearbps.Name = "clearbps"
+clearbps.Parent = plotbframe
+clearbps.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+clearbps.BorderSizePixel = 0
+clearbps.Position = UDim2.new(0, 0, 0.63702774, 0)
+clearbps.Size = UDim2.new(0, 163, 0, 25)
+clearbps.Font = Enum.Font.GothamBold
+clearbps.Text = "Clear blueprints"
+clearbps.TextColor3 = Color3.fromRGB(255, 255, 255)
+clearbps.TextSize = 20.000
+clearbps.TextWrapped = true
+clearbps.MouseButton1Down:connect(function()
+      for i,v in pairs(game.Workspace.PlayerModels:GetChildren()) do
+if v:FindFirstChild("Owner") and v:FindFirstChild("Type") and v.Owner.Value == game.Players.LocalPlayer then
+	if v.Type.Value == "Blueprint" then
+local A_1 = v
+local Event = game:GetService("ReplicatedStorage").Interaction.DestroyStructure
+Event:FireServer(A_1)
+end
+end
+end
+end)
+
+clearstructures.Name = "clearstructures"
+clearstructures.Parent = plotbframe
+clearstructures.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+clearstructures.BorderSizePixel = 0
+clearstructures.Position = UDim2.new(0, 0, 0.747634113, 0)
+clearstructures.Size = UDim2.new(0, 163, 0, 25)
+clearstructures.Font = Enum.Font.GothamBold
+clearstructures.Text = "Clear Structures"
+clearstructures.TextColor3 = Color3.fromRGB(255, 255, 255)
+clearstructures.TextSize = 20.000
+clearstructures.TextWrapped = true
+clearstructures.MouseButton1Down:connect(function()
+      for i,v in pairs(game.Workspace.PlayerModels:GetChildren()) do
+if v:FindFirstChild("Owner") and v:FindFirstChild("Type") and v.Owner.Value == game.Players.LocalPlayer then
+	if v.Type.Value == "Structure" or v.Type.Value == "Furniture" then
+local A_1 = v
+local Event = game:GetService("ReplicatedStorage").Interaction.DestroyStructure
+Event:FireServer(A_1)
+end
+end
+end
+end)
+
+TextButton.Parent = plotbframe
+TextButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0, 0, 0.850000143, 0)
+TextButton.Size = UDim2.new(0, 163, 0, 29)
+TextButton.Font = Enum.Font.GothamBold
+TextButton.Text = "Item Tp"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextSize = 20.000
+TextButton.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/mgkexQUS"))()
+end)
+
+trollingFrame.Name = "trollingFrame"
+trollingFrame.Parent = ScreenGui
+trollingFrame.BackgroundColor3 = Color3.fromRGB(70, 82, 255)
+trollingFrame.Position = UDim2.new(0.263047844, 0, 0, 0)
+trollingFrame.Size = UDim2.new(0, 163, 0, 39)
+
+trollingtitle.Name = "trollingtitle"
+trollingtitle.Parent = trollingFrame
+trollingtitle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+trollingtitle.Size = UDim2.new(0, 163, 0, 31)
+trollingtitle.Font = Enum.Font.GothamBold
+trollingtitle.Text = "Trolling"
+trollingtitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+trollingtitle.TextSize = 20.000
+
+opent.Name = "opent"
+opent.Parent = trollingFrame
+opent.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+opent.BorderSizePixel = 0
+opent.Position = UDim2.new(0.791411161, 0, 0.128205299, 0)
+opent.Size = UDim2.new(0, 34, 0, 26)
+opent.Font = Enum.Font.GothamBold
+opent.Text = "+"
+opent.TextColor3 = Color3.fromRGB(255, 255, 255)
+opent.TextSize = 20.000
+opent.MouseButton1Down:connect(function()
+      trollingbframe.Visible = true
+      opent.Visible = true
+end)
+
+closet.Name = "closet"
+closet.Parent = trollingFrame
+closet.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+closet.BorderSizePixel = 0
+closet.Position = UDim2.new(0.0736198574, 0, 0.153846025, 0)
+closet.Size = UDim2.new(0, 34, 0, 26)
+closet.Font = Enum.Font.GothamBold
+closet.Text = "-"
+closet.TextColor3 = Color3.fromRGB(255, 255, 255)
+closet.TextSize = 20.000
+closet.MouseButton1Down:connect(function()
+      trollingbframe.Visible = false
+      opent.Visible = true
+end)
+
+trollingbframe.Name = "trollingbframe"
+trollingbframe.Parent = trollingFrame
+trollingbframe.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+trollingbframe.Position = UDim2.new(0, 0, 1, 0)
+trollingbframe.Size = UDim2.new(0, 163, 0, 129)
+
+spin.Name = "spin"
+spin.Parent = trollingbframe
+spin.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+spin.BorderSizePixel = 0
+spin.Position = UDim2.new(0, 0, 0.00289022923, 0)
+spin.Size = UDim2.new(0, 163, 0, 25)
+spin.Font = Enum.Font.GothamBold
+spin.Text = "Spin"
+spin.TextColor3 = Color3.fromRGB(255, 255, 255)
+spin.TextSize = 20.000
+spin.TextWrapped = true
+spin.MouseButton1Down:connect(function()
+       spinning = not spinning
+    if spinning then
+        local p = Instance.new("RocketPropulsion")
+        p.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+        p.Name = "CrazySpin"
+        p.Target = game.Players.LocalPlayer.Character["Left Arm"]
+        p:Fire()
+        CoolSpin.BackgroundColor3 = Color3.new(0.992941, 0.811765, 0.2705882)
+    else
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CrazySpin:Destroy()
+        CoolSpin.BackgroundColor3 = Color3.new(0.952941, 0.611765, 0.0705882)
+    end
+end)
+
+nolinbs.Name = "nolinbs"
+nolinbs.Parent = trollingbframe
+nolinbs.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+nolinbs.BorderSizePixel = 0
+nolinbs.Position = UDim2.new(0, 0, 0.193081558, 0)
+nolinbs.Size = UDim2.new(0, 163, 0, 25)
+nolinbs.Font = Enum.Font.GothamBold
+nolinbs.Text = "No Limbs"
+nolinbs.TextColor3 = Color3.fromRGB(255, 255, 255)
+nolinbs.TextSize = 20.000
+nolinbs.TextWrapped = true
+nolinbs.MouseButton1Down:connect(function()
+       game.Players.LocalPlayer.Character["Left Leg"]:Destroy()
+    game.Players.LocalPlayer.Character["Left Arm"]:Destroy()
+    game.Players.LocalPlayer.Character["Right Leg"]:Destroy()
+    game.Players.LocalPlayer.Character["Right Arm"]:Destroy()
+end)
+
+brickhead.Name = "brickhead"
+brickhead.Parent = trollingbframe
+brickhead.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+brickhead.BorderSizePixel = 0
+brickhead.Position = UDim2.new(0, 0, 0.403280079, 0)
+brickhead.Size = UDim2.new(0, 163, 0, 25)
+brickhead.Font = Enum.Font.GothamBold
+brickhead.Text = "Brick Head"
+brickhead.TextColor3 = Color3.fromRGB(255, 255, 255)
+brickhead.TextSize = 20.000
+brickhead.TextWrapped = true
+brickhead.MouseButton1Down:connect(function()
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if (v:IsA("Accessory")) then
+            v.Handle.Mesh:Destroy()
+        end
+    end
+end)
+
+thomas.Name = "thomas"
+thomas.Parent = trollingbframe
+thomas.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+thomas.BorderSizePixel = 0
+thomas.Position = UDim2.new(0, 0, 0.590626001, 0)
+thomas.Size = UDim2.new(0, 163, 0, 25)
+thomas.Font = Enum.Font.GothamBold
+thomas.Text = "Thomas"
+thomas.TextColor3 = Color3.fromRGB(255, 255, 255)
+thomas.TextSize = 20.000
+thomas.TextWrapped = true
+thomas.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet(('http://pastebin.com/raw/tMr759X7'),true))()
+end)
+
+dupeframe.Name = "dupeframe"
+dupeframe.Parent = ScreenGui
+dupeframe.BackgroundColor3 = Color3.fromRGB(70, 82, 255)
+dupeframe.Position = UDim2.new(0.386452138, 0, 0, 0)
+dupeframe.Size = UDim2.new(0, 163, 0, 39)
+
+dupetitle.Name = "dupetitle"
+dupetitle.Parent = dupeframe
+dupetitle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+dupetitle.Size = UDim2.new(0, 163, 0, 31)
+dupetitle.Font = Enum.Font.GothamBold
+dupetitle.Text = "Dupe"
+dupetitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+dupetitle.TextSize = 20.000
+
+opend.Name = "opend"
+opend.Parent = dupeframe
+opend.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+opend.BorderSizePixel = 0
+opend.Position = UDim2.new(0.791411161, 0, 0.128205299, 0)
+opend.Size = UDim2.new(0, 34, 0, 26)
+opend.Font = Enum.Font.GothamBold
+opend.Text = "+"
+opend.TextColor3 = Color3.fromRGB(255, 255, 255)
+opend.TextSize = 20.000
+opend.MouseButton1Down:connect(function()
+      dupebframe.Visible = true
+      opend.Visible = true
+end)
+
+closed.Name = "closed"
+closed.Parent = dupeframe
+closed.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+closed.BorderSizePixel = 0
+closed.Position = UDim2.new(0.0736198574, 0, 0.153846025, 0)
+closed.Size = UDim2.new(0, 34, 0, 26)
+closed.Font = Enum.Font.GothamBold
+closed.Text = "-"
+closed.TextColor3 = Color3.fromRGB(255, 255, 255)
+closed.TextSize = 20.000
+closed.MouseButton1Down:connect(function()
+      dupebframe.Visible = false
+      opend.Visible = true
+end)
+
+dupebframe.Name = "dupebframe"
+dupebframe.Parent = dupeframe
+dupebframe.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+dupebframe.Position = UDim2.new(0, 0, 1, 0)
+dupebframe.Size = UDim2.new(0, 163, 0, 268)
+
+TextButton_2.Parent = dupebframe
+TextButton_2.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TextButton_2.BorderSizePixel = 0
+TextButton_2.Position = UDim2.new(0, 0, 0.0332322754, 0)
+TextButton_2.Size = UDim2.new(0, 163, 0, 26)
+TextButton_2.Font = Enum.Font.GothamBold
+TextButton_2.Text = "Push for commands"
+TextButton_2.TextColor3 = Color3.fromRGB(70, 82, 255)
+TextButton_2.TextSize = 17.000
+TextButton_2.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/KY58pCVM"))()
+end)
+
+TextLabel.Parent = dupebframe
+TextLabel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0, 0, 0.133331031, 0)
+TextLabel.Size = UDim2.new(0, 163, 0, 24)
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.Text = "To dupe money type in chat"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 12.000
+TextLabel.TextStrokeTransparency = 2.000
+
+TextLabel_2.Parent = dupebframe
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0, 0, 0.222178429, 0)
+TextLabel_2.Size = UDim2.new(0, 163, 0, 18)
+TextLabel_2.Font = Enum.Font.GothamBold
+TextLabel_2.Text = "\"!dmoney 1\" then say"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 14.000
+
+TextLabel_3.Parent = dupebframe
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(0, 0, 0.299211979, 0)
+TextLabel_3.Size = UDim2.new(0, 163, 0, 18)
+TextLabel_3.Font = Enum.Font.GothamBold
+TextLabel_3.Text = "\"!loadslot #\""
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextSize = 13.000
+
+TextLabel_4.Parent = dupebframe
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TextLabel_4.BorderSizePixel = 0
+TextLabel_4.Position = UDim2.new(0, 0, 0.6729002, 0)
+TextLabel_4.Size = UDim2.new(0, 163, 0, 18)
+TextLabel_4.Font = Enum.Font.GothamBold
+TextLabel_4.Text = "Then say \"!loadslot #\" "
+TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.TextSize = 13.000
+
+TextLabel_5.Parent = dupebframe
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TextLabel_5.BorderSizePixel = 0
+TextLabel_5.Position = UDim2.new(0, 0, 0.462566674, 0)
+TextLabel_5.Size = UDim2.new(0, 163, 0, 21)
+TextLabel_5.Font = Enum.Font.GothamBold
+TextLabel_5.Text = "To dupe items, put item on"
+TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.TextSize = 12.000
+
+TextLabel_6.Parent = dupebframe
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TextLabel_6.BorderColor3 = Color3.fromRGB(45, 45, 45)
+TextLabel_6.BorderSizePixel = 0
+TextLabel_6.Position = UDim2.new(0, 0, 0.533106863, 0)
+TextLabel_6.Size = UDim2.new(0, 163, 0, 21)
+TextLabel_6.Font = Enum.Font.GothamBold
+TextLabel_6.Text = "other persons base"
+TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.TextSize = 13.000
+
+TextLabel_7.Parent = dupebframe
+TextLabel_7.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TextLabel_7.BorderSizePixel = 0
+TextLabel_7.Position = UDim2.new(0, 0, 0.591813326, 0)
+TextLabel_7.Size = UDim2.new(0, 163, 0, 21)
+TextLabel_7.Font = Enum.Font.GothamBold
+TextLabel_7.Text = "and wl them"
+TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_7.TextSize = 14.000
+
+TextLabel_8.Parent = dupebframe
+TextLabel_8.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TextLabel_8.Position = UDim2.new(0, 0, 0.740064383, 0)
+TextLabel_8.Size = UDim2.new(0, 163, 0, 18)
+TextLabel_8.Font = Enum.Font.GothamBold
+TextLabel_8.Text = "# = slot loaded in"
+TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_8.TextSize = 13.000
+
+TextLabel_9.Parent = dupebframe
+TextLabel_9.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TextLabel_9.BorderSizePixel = 0
+TextLabel_9.Position = UDim2.new(0, 0, 0.814691305, 0)
+TextLabel_9.Size = UDim2.new(0, 163, 0, 18)
+TextLabel_9.Font = Enum.Font.GothamBold
+TextLabel_9.Text = "then your items should "
+TextLabel_9.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_9.TextSize = 13.000
+
+TextLabel_10.Parent = dupebframe
+TextLabel_10.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TextLabel_10.BorderSizePixel = 0
+TextLabel_10.Position = UDim2.new(0, 0, 0.885586798, 0)
+TextLabel_10.Size = UDim2.new(0, 163, 0, 18)
+TextLabel_10.Font = Enum.Font.GothamBold
+TextLabel_10.Text = "Duped"
+TextLabel_10.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_10.TextSize = 13.000
+
+TextLabel_11.Parent = dupebframe
+TextLabel_11.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TextLabel_11.BorderSizePixel = 0
+TextLabel_11.Position = UDim2.new(0, 0, 0.366376162, 0)
+TextLabel_11.Size = UDim2.new(0, 163, 0, 18)
+TextLabel_11.Font = Enum.Font.GothamBold
+TextLabel_11.Text = " # = slot loaded in"
+TextLabel_11.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_11.TextSize = 13.000
+
+miscframe.Name = "miscframe"
+miscframe.Parent = ScreenGui
+miscframe.BackgroundColor3 = Color3.fromRGB(70, 82, 255)
+miscframe.Position = UDim2.new(0.511274874, 0, 0, 0)
+miscframe.Size = UDim2.new(0, 163, 0, 39)
+
+misctitle.Name = "misctitle"
+misctitle.Parent = miscframe
+misctitle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+misctitle.Size = UDim2.new(0, 163, 0, 31)
+misctitle.Font = Enum.Font.GothamBold
+misctitle.Text = "Misc"
+misctitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+misctitle.TextSize = 20.000
+
+openm.Name = "openm"
+openm.Parent = miscframe
+openm.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+openm.BorderSizePixel = 0
+openm.Position = UDim2.new(0.791411161, 0, 0.128205299, 0)
+openm.Size = UDim2.new(0, 34, 0, 26)
+openm.Font = Enum.Font.GothamBold
+openm.Text = "+"
+openm.TextColor3 = Color3.fromRGB(255, 255, 255)
+openm.TextSize = 20.000
+openm.MouseButton1Down:connect(function()
+      miscbframe.Visible = true
+      openm.Visible = true
+end)
+
+closem.Name = "closem"
+closem.Parent = miscframe
+closem.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+closem.BorderSizePixel = 0
+closem.Position = UDim2.new(0.0736198574, 0, 0.153846025, 0)
+closem.Size = UDim2.new(0, 34, 0, 26)
+closem.Font = Enum.Font.GothamBold
+closem.Text = "-"
+closem.TextColor3 = Color3.fromRGB(255, 255, 255)
+closem.TextSize = 20.000
+closem.MouseButton1Down:connect(function()
+      miscbframe.Visible = false
+      openm.Visible = true
+end)
+
+miscbframe.Name = "miscbframe"
+miscbframe.Parent = miscframe
+miscbframe.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+miscbframe.Position = UDim2.new(0, 0, 1, 0)
+miscbframe.Size = UDim2.new(0, 163, 0, 346)
+
+nofog.Name = "nofog"
+nofog.Parent = miscbframe
+nofog.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+nofog.BorderSizePixel = 0
+nofog.Position = UDim2.new(0, 0, 0.0404624268, 0)
+nofog.Size = UDim2.new(0, 163, 0, 25)
+nofog.Font = Enum.Font.GothamBold
+nofog.Text = "No fog"
+nofog.TextColor3 = Color3.fromRGB(255, 255, 255)
+nofog.TextSize = 20.000
+nofog.TextWrapped = true
+nofog.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/wXCsYF1y"))()
+end)
+
+alwaysday.Name = "alwaysday"
+alwaysday.Parent = miscbframe
+alwaysday.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+alwaysday.BorderSizePixel = 0
+alwaysday.Position = UDim2.new(0, 0, 0.112716764, 0)
+alwaysday.Size = UDim2.new(0, 163, 0, 25)
+alwaysday.Font = Enum.Font.GothamBold
+alwaysday.Text = "Always Day"
+alwaysday.TextColor3 = Color3.fromRGB(255, 255, 255)
+alwaysday.TextSize = 20.000
+alwaysday.TextWrapped = true
+alwaysday.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/TusQaMzu"))()
+end)
+
+leakeditems.Name = "leakeditems"
+leakeditems.Parent = miscbframe
+leakeditems.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+leakeditems.BorderSizePixel = 0
+leakeditems.Position = UDim2.new(0, 0, 0.176300585, 0)
+leakeditems.Size = UDim2.new(0, 163, 0, 25)
+leakeditems.Font = Enum.Font.GothamBold
+leakeditems.Text = "Leaked Items"
+leakeditems.TextColor3 = Color3.fromRGB(255, 255, 255)
+leakeditems.TextSize = 20.000
+leakeditems.TextWrapped = true
+leakeditems.MouseButton1Down:connect(function()
+      game.ReplicatedStorage.Purchasables:Clone().Parent = game.Workspace.PlayerModels
+end)
+
+fatsbps.Name = "fatsbps"
+fatsbps.Parent = miscbframe
+fatsbps.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+fatsbps.BorderSizePixel = 0
+fatsbps.Position = UDim2.new(0, 0, 0.24855493, 0)
+fatsbps.Size = UDim2.new(0, 163, 0, 25)
+fatsbps.Font = Enum.Font.GothamBold
+fatsbps.Text = "Fast blueprints"
+fatsbps.TextColor3 = Color3.fromRGB(255, 255, 255)
+fatsbps.TextSize = 20.000
+fatsbps.TextWrapped = true
+fatsbps.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/1YR8cpNE", true))()
+end)
+
+hardd.Name = "hardd"
+hardd.Parent = miscbframe
+hardd.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+hardd.BorderSizePixel = 0
+hardd.Position = UDim2.new(0, 0, 0.317919135, 0)
+hardd.Size = UDim2.new(0, 163, 0, 25)
+hardd.Font = Enum.Font.GothamBold
+hardd.Text = "Hard Drag"
+hardd.TextColor3 = Color3.fromRGB(255, 255, 255)
+hardd.TextSize = 20.000
+hardd.TextWrapped = true
+hardd.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet(('https://pastebin.com/raw/uMv85wZZ'),true))()
+end)
+
+carfly.Name = "carfly"
+carfly.Parent = miscbframe
+carfly.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+carfly.BorderSizePixel = 0
+carfly.Position = UDim2.new(0, 0, 0.390173465, 0)
+carfly.Size = UDim2.new(0, 163, 0, 25)
+carfly.Font = Enum.Font.GothamBold
+carfly.Text = "Car Fly"
+carfly.TextColor3 = Color3.fromRGB(255, 255, 255)
+carfly.TextSize = 20.000
+carfly.TextWrapped = true
+carfly.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/bhDQtNL6"))()
+end)
+
+chatspy.Name = "chatspy"
+chatspy.Parent = miscbframe
+chatspy.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+chatspy.BorderSizePixel = 0
+chatspy.Position = UDim2.new(0, 0, 0.462427735, 0)
+chatspy.Size = UDim2.new(0, 163, 0, 25)
+chatspy.Font = Enum.Font.GothamBold
+chatspy.Text = "Chat Spy"
+chatspy.TextColor3 = Color3.fromRGB(255, 255, 255)
+chatspy.TextSize = 20.000
+chatspy.TextWrapped = true
+chatspy.MouseButton1Down:connect(function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/U5GmsH70"))()
+end)
+
+palmbridge.Name = "palmbridge"
+palmbridge.Parent = miscbframe
+palmbridge.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+palmbridge.BorderSizePixel = 0
+palmbridge.Position = UDim2.new(0, 0, 0.531791925, 0)
+palmbridge.Size = UDim2.new(0, 163, 0, 25)
+palmbridge.Font = Enum.Font.GothamBold
+palmbridge.Text = "Palm Bridge"
+palmbridge.TextColor3 = Color3.fromRGB(255, 255, 255)
+palmbridge.TextSize = 20.000
+palmbridge.TextWrapped = true
+palmbridge.MouseButton1Down:connect(function()
+      local palm1 = Instance.new("Part", workspace)
+	palm1.Name = "K Truck's Goin' There"
+	palm1.Position = Vector3.new(1753.475, -10, -45.351)
+	palm1.Size = Vector3.new(1600, 1, 50)
+	palm1.BrickColor = BrickColor.Random()
+	palm1.Anchored = true
+end)
+
+safaribridge.Name = "safaribridge"
+safaribridge.Parent = miscbframe
+safaribridge.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+safaribridge.BorderSizePixel = 0
+safaribridge.Position = UDim2.new(0, 0, 0.604046226, 0)
+safaribridge.Size = UDim2.new(0, 163, 0, 25)
+safaribridge.Font = Enum.Font.GothamBold
+safaribridge.Text = "Safari Bridge"
+safaribridge.TextColor3 = Color3.fromRGB(255, 255, 255)
+safaribridge.TextSize = 20.000
+safaribridge.TextWrapped = true
+safaribridge.MouseButton1Down:connect(function()
+      local bridge1 = Instance.new("Part", workspace)
+	bridge1.Name = "Lol We Made Our Own Fuck Your ?100"
+	bridge1.Position = Vector3.new(174.511, 1.049, -882.842)
+	bridge1.Size = Vector3.new(60, 0.1, 350)
+	bridge1.BrickColor = BrickColor.Random()
+	wait(0.5)
+	bridge1.Anchored = true
+
+	local bridge2 = Instance.new("Part", workspace)
+	bridge2.Name = "Lol We Made Our Own Fuck Your ?100 Again"
+	bridge2.Position = Vector3.new(49.602, 1.049, -882.842)
+	bridge2.Size = Vector3.new(60, 0.1, 350)
+	bridge2.BrickColor = BrickColor.Random()
+	wait(0.5)
+	bridge2.Anchored = true
+end)
+
+goldbridge.Name = "goldbridge"
+goldbridge.Parent = miscbframe
+goldbridge.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+goldbridge.BorderSizePixel = 0
+goldbridge.Position = UDim2.new(0, 0, 0.676300585, 0)
+goldbridge.Size = UDim2.new(0, 163, 0, 25)
+goldbridge.Font = Enum.Font.GothamBold
+goldbridge.Text = "Gold Bridge"
+goldbridge.TextColor3 = Color3.fromRGB(255, 255, 255)
+goldbridge.TextSize = 20.000
+goldbridge.TextWrapped = true
+goldbridge.MouseButton1Down:connect(function()
+      local bridge = Instance.new("Part", workspace)
+	bridge.Name = "Lol We Made Our Own Fuck Your Shitty Broken Dynamite Slab"
+	bridge.Position = Vector3.new(-1331.086, 293.25, 645.301)
+	bridge.Size = Vector3.new(185, 0.1, 60)
+	bridge.Orientation = Vector3.new(0, -75, 0)
+	bridge.BrickColor = BrickColor.Random()
+	wait(0.5)
+	bridge.Anchored = true
+end)
+
+yellobridge.Name = "yellobridge"
+yellobridge.Parent = miscbframe
+yellobridge.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+yellobridge.BorderSizePixel = 0
+yellobridge.Position = UDim2.new(0, 0, 0.751445174, 0)
+yellobridge.Size = UDim2.new(0, 163, 0, 25)
+yellobridge.Font = Enum.Font.GothamBold
+yellobridge.Text = "Yellow Bridge"
+yellobridge.TextColor3 = Color3.fromRGB(255, 255, 255)
+yellobridge.TextSize = 20.000
+yellobridge.TextWrapped = true
+yellobridge.MouseButton1Down:connect(function()
+      local yellow = Instance.new("Part", workspace)
+	yellow.Name = "Lol Truck There Easy"
+	yellow.Position = Vector3.new(-517.915, -12, -392.256)
+	yellow.Size = Vector3.new(1207.06, 1, 1460.09)
+	yellow.BrickColor = BrickColor.Random()
+	yellow.Anchored = true
+end)
+
+infinitewire.Name = "infinitewire"
+infinitewire.Parent = miscbframe
+infinitewire.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+infinitewire.BorderSizePixel = 0
+infinitewire.Position = UDim2.new(0, 0, 0.823699474, 0)
+infinitewire.Size = UDim2.new(0, 163, 0, 25)
+infinitewire.Font = Enum.Font.GothamBold
+infinitewire.Text = "Infinite Wire"
+infinitewire.TextColor3 = Color3.fromRGB(255, 255, 255)
+infinitewire.TextSize = 20.000
+infinitewire.TextWrapped = true
+infinitewire.MouseButton1Down:connect(function()
+      for i,v in next,game.ReplicatedStorage.Purchasables.WireObjects:GetChildren() do
+  if v:FindFirstChild("Type") then
+      if v.Type.Value == "Wire" then
+          v.Type.Parent.OtherInfo.MaxLength.Value = math.huge
+      end
+  end
+end
+end)
+
+antiafk.Name = "antiafk"
+antiafk.Parent = miscbframe
+antiafk.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+antiafk.BorderSizePixel = 0
+antiafk.Position = UDim2.new(0, 0, 0.895953834, 0)
+antiafk.Size = UDim2.new(0, 163, 0, 25)
+antiafk.Font = Enum.Font.GothamBold
+antiafk.Text = "Anti Afk"
+antiafk.TextColor3 = Color3.fromRGB(255, 255, 255)
+antiafk.TextSize = 20.000
+antiafk.TextWrapped = true
+antiafk.MouseButton1Down:connect(function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/XXPTpkcZ", true))()
+end)
+
+woodFrame.Name = "woodFrame"
+woodFrame.Parent = ScreenGui
+woodFrame.BackgroundColor3 = Color3.fromRGB(70, 82, 255)
+woodFrame.Position = UDim2.new(0.635388315, 0, 0, 0)
+woodFrame.Size = UDim2.new(0, 163, 0, 39)
+
+woodtitle.Name = "woodtitle"
+woodtitle.Parent = woodFrame
+woodtitle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+woodtitle.Size = UDim2.new(0, 163, 0, 31)
+woodtitle.Font = Enum.Font.GothamBold
+woodtitle.Text = "Wood"
+woodtitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+woodtitle.TextSize = 20.000
+
+openW.Name = "openW"
+openW.Parent = woodFrame
+openW.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+openW.BorderSizePixel = 0
+openW.Position = UDim2.new(0.791411161, 0, 0.128205299, 0)
+openW.Size = UDim2.new(0, 34, 0, 26)
+openW.Font = Enum.Font.GothamBold
+openW.Text = "+"
+openW.TextColor3 = Color3.fromRGB(255, 255, 255)
+openW.TextSize = 20.000
+openW.MouseButton1Down:connect(function()
+      woodbframe.Visible = true
+      openW.Visible = true
+end)
+
+closew.Name = "closew"
+closew.Parent = woodFrame
+closew.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+closew.BorderSizePixel = 0
+closew.Position = UDim2.new(0.0736198574, 0, 0.153846025, 0)
+closew.Size = UDim2.new(0, 34, 0, 26)
+closew.Font = Enum.Font.GothamBold
+closew.Text = "-"
+closew.TextColor3 = Color3.fromRGB(255, 255, 255)
+closew.TextSize = 20.000
+closew.MouseButton1Down:connect(function()
+      woodbframe.Visible = false
+      openW.Visible = true
+end)
+
+woodbframe.Name = "woodbframe"
+woodbframe.Parent = woodFrame
+woodbframe.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+woodbframe.Position = UDim2.new(0, 0, 1, 0)
+woodbframe.Size = UDim2.new(0, 163, 0, 594)
+
+sellwood.Name = "sellwood"
+sellwood.Parent = woodbframe
+sellwood.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+sellwood.BorderSizePixel = 0
+sellwood.Position = UDim2.new(0, 0, -1.49011612e-08, 0)
+sellwood.Size = UDim2.new(0, 163, 0, 25)
+sellwood.Font = Enum.Font.GothamBold
+sellwood.Text = "Sell Wood"
+sellwood.TextColor3 = Color3.fromRGB(255, 255, 255)
+sellwood.TextSize = 20.000
+sellwood.TextWrapped = true
+sellwood.MouseButton1Down:connect(function()
+              for _, Log in pairs(workspace.LogModels:GetChildren()) do
+        if Log.Name:sub(1, 6) == "Loose_" and Log:findFirstChild("Owner") then
+            if Log.Owner.Value == game.Players.LocalPlayer then
+                for i,v in pairs(Log:GetChildren()) do
+                    if v.Name=="WoodSection" then
+                        spawn(function()
+                            for i=1,10 do
+                                wait()
+                                v.CFrame=CFrame.new(Vector3.new(315, -0.296, 85.791))*CFrame.Angles(math.rad(90),0,0)
+                            end
+                        end)
+                    end
+                end
+                spawn(function()
+                    for i=1,20 do
+                        wait()
+                        game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(Log)
+                    end
+                end)
+            end
+        end
+    end
+end)
+
+sellinglogs.Name = "sellinglogs"
+sellinglogs.Parent = woodbframe
+sellinglogs.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+sellinglogs.BorderSizePixel = 0
+sellinglogs.Position = UDim2.new(0, 0, 0.0408291034, 0)
+sellinglogs.Size = UDim2.new(0, 163, 0, 25)
+sellinglogs.Font = Enum.Font.GothamBold
+sellinglogs.Text = "Sell Planks"
+sellinglogs.TextColor3 = Color3.fromRGB(255, 255, 255)
+sellinglogs.TextSize = 20.000
+sellinglogs.TextWrapped = true
+sellinglogs.MouseButton1Down:connect(function()
+    for _, Plank in pairs(game.Workspace.PlayerModels:GetChildren()) do
+        if Plank.Name=="Plank" and Plank:findFirstChild("Owner") then
+            if Plank.Owner.Value == game.Players.LocalPlayer then
+                for i,v in pairs(Plank:GetChildren()) do
+                    if v.Name=="WoodSection" then
+                        spawn(function()
+                            for i=1,10 do
+                                wait()
+                                v.CFrame=CFrame.new(Vector3.new(315, -0.296, 85.791))*CFrame.Angles(math.rad(90),0,0)
+                            end
+                        end)
+                    end
+                end
+                spawn(function()
+                    for i=1,20 do
+                        wait()
+                        game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(Plank)
+                    end
+                end)
+            end
+        end
+    end
+end)
+
+tpwood.Name = "tpwood"
+tpwood.Parent = woodbframe
+tpwood.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+tpwood.BorderSizePixel = 0
+tpwood.Position = UDim2.new(0, 0, 0.0840301663, 0)
+tpwood.Size = UDim2.new(0, 163, 0, 25)
+tpwood.Font = Enum.Font.GothamBold
+tpwood.Text = "Tp wood"
+tpwood.TextColor3 = Color3.fromRGB(255, 255, 255)
+tpwood.TextSize = 20.000
+tpwood.TextWrapped = true
+tpwood.MouseButton1Down:connect(function()
+         for _, Log in pairs(game.Workspace.LogModels:GetChildren()) do
+        if Log.Name:sub(1, 6) == "Loose_" and Log:findFirstChild("Owner") then
+            if Log.Owner.Value == game.Players.LocalPlayer then
+                Log:MoveTo(game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0, 20, 0))
+                for i=1,100 do
+                    game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(Log)
+                end
+            end
+        end
+    end
+end)
+
+snowglow.Name = "snowglow"
+snowglow.Parent = woodbframe
+snowglow.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+snowglow.BorderSizePixel = 0
+snowglow.Position = UDim2.new(-3.78703699e-05, 0, 0.954547822, 0)
+snowglow.Size = UDim2.new(0, 163, 0, 25)
+snowglow.Font = Enum.Font.GothamBold
+snowglow.Text = "SnowGlow"
+snowglow.TextColor3 = Color3.fromRGB(255, 255, 255)
+snowglow.TextSize = 20.000
+snowglow.TextWrapped = true
+snowglow.MouseButton1Down:connect(function()
+      Tlprt(-1090.2, 1.2, -950.6)
+end)
+
+notrees.Name = "notrees"
+notrees.Parent = woodbframe
+notrees.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+notrees.BorderSizePixel = 0
+notrees.Position = UDim2.new(0, 0, 0.167991102, 0)
+notrees.Size = UDim2.new(0, 163, 0, 25)
+notrees.Font = Enum.Font.GothamBold
+notrees.Text = "No Trees"
+notrees.TextColor3 = Color3.fromRGB(255, 255, 255)
+notrees.TextSize = 20.000
+notrees.TextWrapped = true
+notrees.MouseButton1Down:connect(function()
+      for i,v in pairs(game.Workspace:GetDescendants()) do
+    if v.Name == "WoodSection" and v.Parent:FindFirstChild("CutEvent") then
+        game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v.Parent)
+        game.ReplicatedStorage.Interaction.DestroyStructure:FireServer(v.Parent)
+    end
+end
+game.Workspace.DescendantAdded:connect(function(Thing)
+    wait(0.1)
+    if Thing.Name == "WoodSection" and Thing.Parent:FindFirstChild("CutEvent") then
+        game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(Thing.Parent)
+        game.ReplicatedStorage.Interaction.DestroyStructure:FireServer(Thing.Parent)
+    end
+end)
+end)
+
+palm.Name = "palm"
+palm.Parent = woodbframe
+palm.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+palm.BorderSizePixel = 0
+palm.Position = UDim2.new(-3.78703699e-05, 0, 0.278510869, 0)
+palm.Size = UDim2.new(0, 163, 0, 25)
+palm.Font = Enum.Font.GothamBold
+palm.Text = "Palm"
+palm.TextColor3 = Color3.fromRGB(255, 255, 255)
+palm.TextSize = 20.000
+palm.TextWrapped = true
+palm.MouseButton1Down:connect(function()
+      Tlprt(2677, -5.9, -74.7)
+end)
+
+goldswampy.Name = "goldswampy"
+goldswampy.Parent = woodbframe
+goldswampy.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+goldswampy.BorderSizePixel = 0
+goldswampy.Position = UDim2.new(-3.78703699e-05, 0, 0.32142067, 0)
+goldswampy.Size = UDim2.new(0, 163, 0, 25)
+goldswampy.Font = Enum.Font.GothamBold
+goldswampy.Text = "GoldSwampy"
+goldswampy.TextColor3 = Color3.fromRGB(255, 255, 255)
+goldswampy.TextSize = 20.000
+goldswampy.TextWrapped = true
+goldswampy.MouseButton1Down:connect(function()
+      Tlprt(-1251.9, 133.4, -1323.7)
+end)
+
+greenswampy.Name = "greenswampy"
+greenswampy.Parent = woodbframe
+greenswampy.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+greenswampy.BorderSizePixel = 0
+greenswampy.Position = UDim2.new(-3.78703699e-05, 0, 0.36304006, 0)
+greenswampy.Size = UDim2.new(0, 163, 0, 25)
+greenswampy.Font = Enum.Font.GothamBold
+greenswampy.Text = " GreenSwampy"
+greenswampy.TextColor3 = Color3.fromRGB(255, 255, 255)
+greenswampy.TextSize = 20.000
+greenswampy.TextWrapped = true
+greenswampy.MouseButton1Down:connect(function()
+      Tlprt(-999, 132.2, -931.8)
+end)
+
+cavecrawler.Name = "cavecrawler"
+cavecrawler.Parent = woodbframe
+cavecrawler.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+cavecrawler.BorderSizePixel = 0
+cavecrawler.Position = UDim2.new(-3.78703699e-05, 0, 0.409469992, 0)
+cavecrawler.Size = UDim2.new(0, 163, 0, 25)
+cavecrawler.Font = Enum.Font.GothamBold
+cavecrawler.Text = "CaveCrawler"
+cavecrawler.TextColor3 = Color3.fromRGB(255, 255, 255)
+cavecrawler.TextSize = 20.000
+cavecrawler.TextWrapped = true
+cavecrawler.MouseButton1Down:connect(function()
+      Tlprt(3439.4, -213.3, 535.1)
+end)
+
+frost.Name = "frost"
+frost.Parent = woodbframe
+frost.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+frost.BorderSizePixel = 0
+frost.Position = UDim2.new(-3.78703699e-05, 0, 0.452532887, 0)
+frost.Size = UDim2.new(0, 163, 0, 25)
+frost.Font = Enum.Font.GothamBold
+frost.Text = "Frost"
+frost.TextColor3 = Color3.fromRGB(255, 255, 255)
+frost.TextSize = 20.000
+frost.TextWrapped = true
+frost.MouseButton1Down:connect(function()
+      Tlprt(1452.1, 412.4, 3249)
+end)
+
+koa.Name = "koa"
+koa.Parent = woodbframe
+koa.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+koa.BorderSizePixel = 0
+koa.Position = UDim2.new(-3.78703699e-05, 0, 0.493912309, 0)
+koa.Size = UDim2.new(0, 163, 0, 25)
+koa.Font = Enum.Font.GothamBold
+koa.Text = "Koa"
+koa.TextColor3 = Color3.fromRGB(255, 255, 255)
+koa.TextSize = 20.000
+koa.TextWrapped = true
+koa.MouseButton1Down:connect(function()
+      Tlprt(5034.1, 2.8, -227.9)
+end)
+
+oak.Name = "oak"
+oak.Parent = woodbframe
+oak.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+oak.BorderSizePixel = 0
+oak.Position = UDim2.new(-3.78703699e-05, 0, 0.535291791, 0)
+oak.Size = UDim2.new(0, 163, 0, 25)
+oak.Font = Enum.Font.GothamBold
+oak.Text = "Oak"
+oak.TextColor3 = Color3.fromRGB(255, 255, 255)
+oak.TextSize = 20.000
+oak.TextWrapped = true
+oak.MouseButton1Down:connect(function()
+      Tlprt(220.1, 59.8, 1277.3)
+end)
+
+vol.Name = "vol"
+vol.Parent = woodbframe
+vol.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+vol.BorderSizePixel = 0
+vol.Position = UDim2.new(-3.78703699e-05, 0, 0.576671183, 0)
+vol.Size = UDim2.new(0, 163, 0, 25)
+vol.Font = Enum.Font.GothamBold
+vol.Text = "Volcano"
+vol.TextColor3 = Color3.fromRGB(255, 255, 255)
+vol.TextSize = 20.000
+vol.TextWrapped = true
+vol.MouseButton1Down:connect(function()
+      Tlprt(-1519, 623, 1127.7)
+end)
+
+Generic.Name = "Generic"
+Generic.Parent = woodbframe
+Generic.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Generic.BorderSizePixel = 0
+Generic.Position = UDim2.new(-3.78703699e-05, 0, 0.614374161, 0)
+Generic.Size = UDim2.new(0, 163, 0, 25)
+Generic.Font = Enum.Font.GothamBold
+Generic.Text = "Generic"
+Generic.TextColor3 = Color3.fromRGB(255, 255, 255)
+Generic.TextSize = 20.000
+Generic.TextWrapped = true
+Generic.MouseButton1Down:connect(function()
+      Tlprt(-221.1, 22, 520.9)
+end)
+
+birch.Name = "birch"
+birch.Parent = woodbframe
+birch.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+birch.BorderSizePixel = 0
+birch.Position = UDim2.new(-3.78191471e-05, 0, 0.655753613, 0)
+birch.Size = UDim2.new(0, 163, 0, 24)
+birch.Font = Enum.Font.GothamBold
+birch.Text = "Birch"
+birch.TextColor3 = Color3.fromRGB(255, 255, 255)
+birch.TextSize = 20.000
+birch.TextWrapped = true
+birch.MouseButton1Down:connect(function()
+      Tlprt(5060.1, 17.6, -797.7)
+end)
+
+walnut.Name = "walnut"
+walnut.Parent = woodbframe
+walnut.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+walnut.BorderSizePixel = 0
+walnut.Position = UDim2.new(-3.78703699e-05, 0, 0.698723733, 0)
+walnut.Size = UDim2.new(0, 163, 0, 25)
+walnut.Font = Enum.Font.GothamBold
+walnut.Text = "Walnut"
+walnut.TextColor3 = Color3.fromRGB(255, 255, 255)
+walnut.TextSize = 20.000
+walnut.TextWrapped = true
+walnut.MouseButton1Down:connect(function()
+      Tlprt(20.9, 3, -1801.1)
+end)
+
+sinister.Name = "sinister"
+sinister.Parent = woodbframe
+sinister.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+sinister.BorderSizePixel = 0
+sinister.Position = UDim2.new(-3.78703699e-05, 0, 0.740103185, 0)
+sinister.Size = UDim2.new(0, 163, 0, 25)
+sinister.Font = Enum.Font.GothamBold
+sinister.Text = "Sinister"
+sinister.TextColor3 = Color3.fromRGB(255, 255, 255)
+sinister.TextSize = 20.000
+sinister.TextWrapped = true
+sinister.MouseButton1Down:connect(function()
+      --Scripthere
+end)
+
+pine.Name = "pine"
+pine.Parent = woodbframe
+pine.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+pine.BorderSizePixel = 0
+pine.Position = UDim2.new(-3.78703699e-05, 0, 0.784934044, 0)
+pine.Size = UDim2.new(0, 163, 0, 25)
+pine.Font = Enum.Font.GothamBold
+pine.Text = "Pine "
+pine.TextColor3 = Color3.fromRGB(255, 255, 255)
+pine.TextSize = 20.000
+pine.TextWrapped = true
+pine.MouseButton1Down:connect(function()
+      Tlprt(666.2, 59.8, 2191.9)
+end)
+
+spooky.Name = "spooky"
+spooky.Parent = woodbframe
+spooky.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+spooky.BorderSizePixel = 0
+spooky.Position = UDim2.new(-3.78703699e-05, 0, 0.828325093, 0)
+spooky.Size = UDim2.new(0, 163, 0, 25)
+spooky.Font = Enum.Font.GothamBold
+spooky.Text = "Spooky"
+spooky.TextColor3 = Color3.fromRGB(255, 255, 255)
+spooky.TextSize = 20.000
+spooky.TextWrapped = true
+spooky.MouseButton1Down:connect(function()
+      Tlprt(-41.3, -215.4, -1341)
+end)
+
+fir.Name = "fir"
+fir.Parent = woodbframe
+fir.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+fir.BorderSizePixel = 0
+fir.Position = UDim2.new(-3.78703699e-05, 0, 0.869104862, 0)
+fir.Size = UDim2.new(0, 163, 0, 25)
+fir.Font = Enum.Font.GothamBold
+fir.Text = "Fir"
+fir.TextColor3 = Color3.fromRGB(255, 255, 255)
+fir.TextSize = 20.000
+fir.TextWrapped = true
+fir.MouseButton1Down:connect(function()
+      Tlprt(924.8, 59.8, 1845)
+end)
+
+cherry.Name = "cherry"
+cherry.Parent = woodbframe
+cherry.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+cherry.BorderSizePixel = 0
+cherry.Position = UDim2.new(-3.78703699e-05, 0, 0.913509846, 0)
+cherry.Size = UDim2.new(0, 163, 0, 25)
+cherry.Font = Enum.Font.GothamBold
+cherry.Text = "Cherry"
+cherry.TextColor3 = Color3.fromRGB(255, 255, 255)
+cherry.TextSize = 20.000
+cherry.TextWrapped = true
+cherry.MouseButton1Down:connect(function()
+       Tlprt(212.9, 59.8, 1270.6)
+end)
+
+tpwood_2.Name = "tpwood"
+tpwood_2.Parent = woodbframe
+tpwood_2.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+tpwood_2.BorderSizePixel = 0
+tpwood_2.Position = UDim2.new(0, 0, 0.230457321, 0)
+tpwood_2.Size = UDim2.new(0, 163, 0, 28)
+tpwood_2.Font = Enum.Font.GothamBold
+tpwood_2.Text = "TP Wood"
+tpwood_2.TextColor3 = Color3.fromRGB(70, 82, 255)
+tpwood_2.TextSize = 20.000
+
+tplogs.Name = "tplogs"
+tplogs.Parent = woodbframe
+tplogs.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+tplogs.BorderSizePixel = 0
+tplogs.Position = UDim2.new(0, 0, 0.126117706, 0)
+tplogs.Size = UDim2.new(0, 163, 0, 25)
+tplogs.Font = Enum.Font.GothamBold
+tplogs.Text = "Tp Planks"
+tplogs.TextColor3 = Color3.fromRGB(255, 255, 255)
+tplogs.TextSize = 20.000
+tplogs.TextWrapped = true
+tplogs.MouseButton1Down:connect(function()
+      for _, Plank in pairs(game.Workspace.PlayerModels:GetChildren()) do
+        if Plank.Name=="Plank" and Plank:findFirstChild("Owner") then
+            if Plank.Owner.Value == game.Players.LocalPlayer then
+                sendNotice = game.ReplicatedStorage.Notices.SendUserNotice
+                sendNotice:Fire("Click where you want ALL the Planks to TP to")
+                local ButtonPress
+                ButtonPress = game.Players.LocalPlayer:GetMouse().Button1Down:Connect(function()
+                    Square = game.Players.LocalPlayer:GetMouse().Target
+                    if (Square.Name == "OriginSquare" or Square.Name == "Square") then
+                        ButtonPress:Disconnect()
+                        Plank:MoveTo(Square.Position)
+                        for i=1,100 do
+                            game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(Plank)
+                        end
+                    end
+                end)
+            end
+        end
+    end
+end)
+
+tpframe.Name = "tpframe"
+tpframe.Parent = ScreenGui
+tpframe.BackgroundColor3 = Color3.fromRGB(70, 82, 255)
+tpframe.Position = UDim2.new(0.756664932, 0, 1.49011612e-08, 0)
+tpframe.Size = UDim2.new(0, 163, 0, 39)
+
+tptitle.Name = "tptitle"
+tptitle.Parent = tpframe
+tptitle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+tptitle.Size = UDim2.new(0, 163, 0, 31)
+tptitle.Font = Enum.Font.GothamBold
+tptitle.Text = "Tp"
+tptitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+tptitle.TextSize = 20.000
+
+opentp.Name = "opentp"
+opentp.Parent = tpframe
+opentp.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+opentp.BorderSizePixel = 0
+opentp.Position = UDim2.new(0.791411161, 0, 0.128205299, 0)
+opentp.Size = UDim2.new(0, 34, 0, 26)
+opentp.Font = Enum.Font.GothamBold
+opentp.Text = "+"
+opentp.TextColor3 = Color3.fromRGB(255, 255, 255)
+opentp.TextSize = 20.000
+opentp.MouseButton1Down:connect(function()
+      Tpbframe.Visible = true
+      opentp.Visible = true
+end)
+
+closetp.Name = "closetp"
+closetp.Parent = tpframe
+closetp.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+closetp.BorderSizePixel = 0
+closetp.Position = UDim2.new(0.0736198574, 0, 0.153846025, 0)
+closetp.Size = UDim2.new(0, 34, 0, 26)
+closetp.Font = Enum.Font.GothamBold
+closetp.Text = "-"
+closetp.TextColor3 = Color3.fromRGB(255, 255, 255)
+closetp.TextSize = 20.000
+closetp.MouseButton1Down:connect(function()
+      Tpbframe.Visible = false
+      opentp.Visible = true
+end)
+
+Tpbframe.Name = "Tpbframe"
+Tpbframe.Parent = tpframe
+Tpbframe.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Tpbframe.Position = UDim2.new(0, 0, 1, 0)
+Tpbframe.Size = UDim2.new(0, 163, 0, 346)
+
+fancyfur.Name = "fancyfur"
+fancyfur.Parent = Tpbframe
+fancyfur.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+fancyfur.BorderSizePixel = 0
+fancyfur.Position = UDim2.new(0, 0, 0.265895963, 0)
+fancyfur.Size = UDim2.new(0, 163, 0, 25)
+fancyfur.Font = Enum.Font.GothamBold
+fancyfur.Text = "FancyFurnishings "
+fancyfur.TextColor3 = Color3.fromRGB(255, 255, 255)
+fancyfur.TextSize = 20.000
+fancyfur.TextWrapped = true
+fancyfur.MouseButton1Down:connect(function()
+      Tlprt(491, 13, -1720)
+end)
+
+fineArt.Name = "fineArt"
+fineArt.Parent = Tpbframe
+fineArt.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+fineArt.BorderSizePixel = 0
+fineArt.Position = UDim2.new(0, 0, 0.485549092, 0)
+fineArt.Size = UDim2.new(0, 163, 0, 25)
+fineArt.Font = Enum.Font.GothamBold
+fineArt.Text = "FineArtsShop"
+fineArt.TextColor3 = Color3.fromRGB(255, 255, 255)
+fineArt.TextSize = 20.000
+fineArt.TextWrapped = true
+fineArt.MouseButton1Down:connect(function()
+      Tlprt(5207, -156, 719)
+end)
+
+Shrine.Name = "Shrine"
+Shrine.Parent = Tpbframe
+Shrine.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Shrine.BorderSizePixel = 0
+Shrine.Position = UDim2.new(0, 0, 0.777456641, 0)
+Shrine.Size = UDim2.new(0, 163, 0, 25)
+Shrine.Font = Enum.Font.GothamBold
+Shrine.Text = "ShrineOfSight"
+Shrine.TextColor3 = Color3.fromRGB(255, 255, 255)
+Shrine.TextSize = 20.000
+Shrine.TextWrapped = true
+Shrine.MouseButton1Down:connect(function()
+      Tlprt(-1600, 205, 919)
+end)
+
+bob.Name = "bob"
+bob.Parent = Tpbframe
+bob.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+bob.BorderSizePixel = 0
+bob.Position = UDim2.new(-5.96046448e-08, 0, 0.630057812, 0)
+bob.Size = UDim2.new(0, 163, 0, 25)
+bob.Font = Enum.Font.GothamBold
+bob.Text = "BobsShack"
+bob.TextColor3 = Color3.fromRGB(255, 255, 255)
+bob.TextSize = 20.000
+bob.TextWrapped = true
+bob.MouseButton1Down:connect(function()
+      Tlprt(260, 10, -2542)
+end)
+
+landstore.Name = "landstore"
+landstore.Parent = Tpbframe
+landstore.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+landstore.BorderSizePixel = 0
+landstore.Position = UDim2.new(0, 0, 0.190751433, 0)
+landstore.Size = UDim2.new(0, 163, 0, 25)
+landstore.Font = Enum.Font.GothamBold
+landstore.Text = "LandStore"
+landstore.TextColor3 = Color3.fromRGB(255, 255, 255)
+landstore.TextSize = 20.000
+landstore.TextWrapped = true
+landstore.MouseButton1Down:connect(function()
+      Tlprt(258, 5, -99)
+end)
+
+link.Name = "link"
+link.Parent = Tpbframe
+link.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+link.BorderSizePixel = 0
+link.Position = UDim2.new(0, 0, 0.413294792, 0)
+link.Size = UDim2.new(0, 163, 0, 25)
+link.Font = Enum.Font.GothamBold
+link.Text = "LinksLogic"
+link.TextColor3 = Color3.fromRGB(255, 255, 255)
+link.TextSize = 20.000
+link.TextWrapped = true
+link.MouseButton1Down:connect(function()
+      Tlprt(4607, 9, -798)
+end)
+
+starttpt.Name = "starttpt"
+starttpt.Parent = Tpbframe
+starttpt.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+starttpt.BorderSizePixel = 0
+starttpt.Position = UDim2.new(-1.78813934e-07, 0, 0.0433523655, 0)
+starttpt.Size = UDim2.new(0, 163, 0, 25)
+starttpt.Font = Enum.Font.GothamBold
+starttpt.Text = "SpawnPoint"
+starttpt.TextColor3 = Color3.fromRGB(255, 255, 255)
+starttpt.TextSize = 20.000
+starttpt.TextWrapped = true
+starttpt.MouseButton1Down:connect(function()
+      Tlprt(155, 5, 74)
+end)
+
+dock.Name = "dock"
+dock.Parent = Tpbframe
+dock.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+dock.BorderSizePixel = 0
+dock.Position = UDim2.new(0, 0, 0.92485553, 0)
+dock.Size = UDim2.new(0, 163, 0, 25)
+dock.Font = Enum.Font.GothamBold
+dock.Text = "Dock"
+dock.TextColor3 = Color3.fromRGB(255, 255, 255)
+dock.TextSize = 20.000
+dock.TextWrapped = true
+dock.MouseButton1Down:connect(function()
+      Tlprt(1114, 3.2, -197)
+end)
+
+ski.Name = "ski"
+ski.Parent = Tpbframe
+ski.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+ski.BorderSizePixel = 0
+ski.Position = UDim2.new(0, 0, 0.557803512, 0)
+ski.Size = UDim2.new(0, 163, 0, 25)
+ski.Font = Enum.Font.GothamBold
+ski.Text = "SkiLodge"
+ski.TextColor3 = Color3.fromRGB(255, 255, 255)
+ski.TextSize = 20.000
+ski.TextWrapped = true
+ski.MouseButton1Down:connect(function()
+      Tlprt(1244, 66, 2306)
+end)
+
+car.Name = "car"
+car.Parent = Tpbframe
+car.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+car.BorderSizePixel = 0
+car.Position = UDim2.new(1.49011612e-08, 0, 0.338150382, 0)
+car.Size = UDim2.new(0, 163, 0, 25)
+car.Font = Enum.Font.GothamBold
+car.Text = "BoxedCars"
+car.TextColor3 = Color3.fromRGB(255, 255, 255)
+car.TextSize = 20.000
+car.TextWrapped = true
+car.MouseButton1Down:connect(function()
+      Tlprt(509, 5.2, -1463)
+end)
+
+wood.Name = "wood"
+wood.Parent = Tpbframe
+wood.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+wood.BorderSizePixel = 0
+wood.Position = UDim2.new(0, 0, 0.115607023, 0)
+wood.Size = UDim2.new(0, 163, 0, 25)
+wood.Font = Enum.Font.GothamBold
+wood.Text = "WoodRUs"
+wood.TextColor3 = Color3.fromRGB(255, 255, 255)
+wood.TextSize = 20.000
+wood.TextWrapped = true
+wood.MouseButton1Down:connect(function()
+      Tlprt(265, 5, 57)
+end)
+
+bridge.Name = "bridge"
+bridge.Parent = Tpbframe
+bridge.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+bridge.BorderSizePixel = 0
+bridge.Position = UDim2.new(0, 0, 0.849711061, 0)
+bridge.Size = UDim2.new(0, 163, 0, 25)
+bridge.Font = Enum.Font.GothamBold
+bridge.Text = " Bridge"
+bridge.TextColor3 = Color3.fromRGB(255, 255, 255)
+bridge.TextSize = 20.000
+bridge.TextWrapped = true
+bridge.MouseButton1Down:connect(function()
+      Tlprt(113, 15, -977)
+end)
+
+strangeman.Name = "strangeman"
+strangeman.Parent = Tpbframe
+strangeman.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+strangeman.BorderSizePixel = 0
+strangeman.Position = UDim2.new(9.68575478e-08, 0, 0.702312171, 0)
+strangeman.Size = UDim2.new(0, 163, 0, 25)
+strangeman.Font = Enum.Font.GothamBold
+strangeman.Text = "StrangeMan"
+strangeman.TextColor3 = Color3.fromRGB(255, 255, 255)
+strangeman.TextSize = 20.000
+strangeman.TextWrapped = true
+strangeman.MouseButton1Down:connect(function()
+      Tlprt(1061, 20, 1131)
+end)
+
+creditsframe.Name = "creditsframe"
+creditsframe.Parent = ScreenGui
+creditsframe.BackgroundColor3 = Color3.fromRGB(70, 82, 255)
+creditsframe.Position = UDim2.new(0.880069137, 0, 0, 0)
+creditsframe.Size = UDim2.new(0, 163, 0, 39)
+
+creditstitle.Name = "creditstitle"
+creditstitle.Parent = creditsframe
+creditstitle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+creditstitle.Size = UDim2.new(0, 163, 0, 31)
+creditstitle.Font = Enum.Font.GothamBold
+creditstitle.Text = "Credits"
+creditstitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+creditstitle.TextSize = 20.000
+
+openc.Name = "openc"
+openc.Parent = creditsframe
+openc.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+openc.BorderSizePixel = 0
+openc.Position = UDim2.new(0.791411161, 0, 0.128205299, 0)
+openc.Size = UDim2.new(0, 34, 0, 26)
+openc.Font = Enum.Font.GothamBold
+openc.Text = "+"
+openc.TextColor3 = Color3.fromRGB(255, 255, 255)
+openc.TextSize = 20.000
+openc.MouseButton1Down:connect(function()
+      Creditsbframe.Visible = true
+      openc.Visible = true
+end)
+
+closec.Name = "closec"
+closec.Parent = creditsframe
+closec.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+closec.BorderSizePixel = 0
+closec.Position = UDim2.new(0.0736198574, 0, 0.153846025, 0)
+closec.Size = UDim2.new(0, 34, 0, 26)
+closec.Font = Enum.Font.GothamBold
+closec.Text = "-"
+closec.TextColor3 = Color3.fromRGB(255, 255, 255)
+closec.TextSize = 20.000
+closec.MouseButton1Down:connect(function()
+      Creditsbframe.Visible = false
+      openc.Visible = true
+end)
+
+Creditsbframe.Name = "Creditsbframe"
+Creditsbframe.Parent = creditsframe
+Creditsbframe.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Creditsbframe.Position = UDim2.new(0, 0, 1, 0)
+Creditsbframe.Size = UDim2.new(0, 163, 0, 193)
+
+thanks.Name = "thanks"
+thanks.Parent = Creditsbframe
+thanks.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+thanks.BorderSizePixel = 0
+thanks.Position = UDim2.new(7.4505806e-09, 0, -0.00327594206, 0)
+thanks.Size = UDim2.new(0, 163, 0, 25)
+thanks.Font = Enum.Font.GothamBold
+thanks.Text = "Special Thanks"
+thanks.TextColor3 = Color3.fromRGB(255, 255, 255)
+thanks.TextSize = 20.000
+thanks.TextWrapped = true
+
+to.Name = "to"
+to.Parent = Creditsbframe
+to.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+to.BorderSizePixel = 0
+to.Position = UDim2.new(0, 0, 0.0916242599, 0)
+to.Size = UDim2.new(0, 163, 0, 25)
+to.Font = Enum.Font.GothamBold
+to.Text = "to"
+to.TextColor3 = Color3.fromRGB(255, 255, 255)
+to.TextSize = 20.000
+to.TextWrapped = true
+
+hib.Name = "hib"
+hib.Parent = Creditsbframe
+hib.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+hib.BorderSizePixel = 0
+hib.Position = UDim2.new(0, 0, 0.216898546, 0)
+hib.Size = UDim2.new(0, 163, 0, 25)
+hib.Font = Enum.Font.GothamBold
+hib.Text = "Hibjr7"
+hib.TextColor3 = Color3.fromRGB(70, 82, 255)
+hib.TextSize = 20.000
+hib.TextWrapped = true
+
+andd.Name = "andd"
+andd.Parent = Creditsbframe
+andd.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+andd.BorderSizePixel = 0
+andd.Position = UDim2.new(0, 0, 0.343938231, 0)
+andd.Size = UDim2.new(0, 163, 0, 25)
+andd.Font = Enum.Font.GothamBold
+andd.Text = "and"
+andd.TextColor3 = Color3.fromRGB(255, 255, 255)
+andd.TextSize = 20.000
+andd.TextWrapped = true
+
+unknown.Name = "unknown"
+unknown.Parent = Creditsbframe
+unknown.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+unknown.BorderSizePixel = 0
+unknown.Position = UDim2.new(0, 0, 0.47413227, 0)
+unknown.Size = UDim2.new(0, 163, 0, 25)
+unknown.Font = Enum.Font.GothamBold
+unknown.Text = "Unknownina5749"
+unknown.TextColor3 = Color3.fromRGB(70, 82, 255)
+unknown.TextSize = 20.000
+unknown.TextWrapped = true
+
+lumberdestroyer.Name = "lumberdestroyer"
+lumberdestroyer.Parent = Creditsbframe
+lumberdestroyer.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+lumberdestroyer.BorderSizePixel = 0
+lumberdestroyer.Position = UDim2.new(0, 0, 0.76042825, 0)
+lumberdestroyer.Size = UDim2.new(0, 163, 0, 37)
+lumberdestroyer.Font = Enum.Font.GothamBold
+lumberdestroyer.Text = "Lumber Destroyer"
+lumberdestroyer.TextColor3 = Color3.fromRGB(70, 82, 255)
+lumberdestroyer.TextSize = 19.000
+lumberdestroyer.TextWrapped = true
+
+andd_2.Name = "andd"
+andd_2.Parent = Creditsbframe
+andd_2.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+andd_2.BorderSizePixel = 0
+andd_2.Position = UDim2.new(0, 0, 0.607247651, 0)
+andd_2.Size = UDim2.new(0, 163, 0, 25)
+andd_2.Font = Enum.Font.GothamBold
+andd_2.Text = "_________________"
+andd_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+andd_2.TextSize = 20.000
+andd_2.TextWrapped = true
+
+function Tlprt(x,y,z)
+    game.Players.LocalPlayer.Character.Humanoid.Sit = true
+    game.Players.LocalPlayer.Character.Humanoid.Jump = true
+ 
+    wait(0.1)
+     game.Players.LocalPlayer.Character.Humanoid.Sit = true
+        game.Players.LocalPlayer.Character.Humanoid.Jump = true
+       local tweenService = game:GetService("TweenService")
+       local tweeningInformation = TweenInfo.new(
+   
+3, -- Length
+Enum.EasingStyle.Linear, -- Easing style of the TweenInfo
+Enum.EasingDirection.Out, -- Easing direction of the TweenInfo
+0, -- Number of times the tween will repeat  
+false, -- Should the tween repeat?
+0 -- Delay between each tween  
+)
+local partProperties = {
+    CFrame = CFrame.new(x,y,z)
+}
+        local Tween = tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweeningInformation,partProperties)
+        Tween:Play()
+           
+           
+           
+           
+   
+end
