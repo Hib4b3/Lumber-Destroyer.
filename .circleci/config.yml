@@ -1,0 +1,15 @@
+local MarketplaceService = game:GetService("MarketplaceService")
+
+local games = {
+    [205224386 ] = {src="https://pastebin.com/raw/KqT7FtwS"}, --"," that's it
+    [4893679160] = {src="https://pastebin.com/raw/kcLMSGZT"}
+}
+
+local check = games[game.PlaceId] 
+
+if check then
+    loadstring(game:HttpGet(check.src))()
+else
+    local Players = game:GetService("Players")
+    Players.LocalPlayer:Kick(string.format("%s isn't a supported game, fuck off.", MarketplaceService:GetProductInfo(game.PlaceId).Name))
+end
